@@ -1,0 +1,17 @@
+<section class="profile-documents-item">
+  <div class="container">
+    <div class="row">
+      <div class="col-12" *ngFor="let document of documents; let i = index;">
+        <div class="d-flex mb-4 p-4 profile-documents-item__lay">
+          <div class="profile-documents-item__number mr-4">{{ i + 1 }}</div>
+          <div class="profile-documents-item__content">
+            <div class="profile-documents-item__num mt-1 pt-1 mb-2">Номер документа: {{ document.number }}</div>
+            <div class="profile-documents-item__name mt-1 pt-1 mb-2">{{ document.name }}</div>
+            <div class="profile-documents-item__note mb-2">{{ document.note }}</div>
+            <div class="profile-documents-item__date">Дата создания: {{ document.created_at | date: 'dd.LL.yyyy'  }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

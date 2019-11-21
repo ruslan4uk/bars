@@ -1,0 +1,24 @@
+<section class="profile-documents-item">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <button class="btn btn-primary mb-4" [routerLink]="['/profile/create']">Добавить документ</button>
+      </div>
+      <div class="col-12" *ngFor="let document of documents; let i = index;">
+        <div class="d-flex mb-4 p-4 profile-documents-item__lay">
+          <div class="profile-documents-item__number mr-4">{{ i + 1 }}</div>
+          <div class="profile-documents-item__content">
+            <div class="profile-documents-item__num mt-1 pt-1 mb-2">Номер документа: {{ document.number }}</div>
+            <div class="profile-documents-item__name mt-1 pt-1 mb-2">{{ document.name }}</div>
+            <div class="profile-documents-item__note mb-2">{{ document.note }}</div>
+            <div class="profile-documents-item__date">Дата создания: {{ document.created_at | date: 'dd.LL.yyyy'  }}</div>
+          </div>
+          <div class="profile-documents-item__btns ml-auto align-self-center">
+            <a [routerLink]="[ document.id ]" class="p-1 text-secondary"><i class="fas fa-edit"></i></a>
+            <a class="p-1 text-danger" (click)="deleteDocumentItem(document.id)"><i class="fas fa-trash-alt"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
